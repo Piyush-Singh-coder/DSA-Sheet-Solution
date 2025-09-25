@@ -11,7 +11,7 @@ public class CourseScheduleV1 {
             adj.add(new ArrayList<>());
         }
         for (int i = 0; i<prerequisites.length; i++){
-            adj.get(prerequisites[i][0]).add(prerequisites[i][1]);
+            adj.get(prerequisites[i][1]).add(prerequisites[i][0]);
         }
         int inorder[] = new int[numCourses];
         for(ArrayList<Integer> adjList: adj){
