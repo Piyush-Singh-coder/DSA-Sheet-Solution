@@ -15,7 +15,7 @@ public class WordLadder {
     }
     public static int wordLadderLength(String[] wordList, String startWord, String targetWord){
         Queue<Pair> q = new LinkedList<>();
-        q.add(new Pair(startWord, 0));
+        q.add(new Pair(startWord, 1));
         Set<String> s = new HashSet<>();
         for (int i = 0; i<wordList.length; i ++){
             s.add(wordList[i]);
@@ -25,7 +25,7 @@ public class WordLadder {
             String word = q.peek().first;
             int steps = q.peek().second;
             q.remove();
-            if (word.equals(targetWord)) return steps;
+            if (word.equals(targetWord) == true) return steps;
             for (int i = 0; i<word.length(); i++){
                 for (char ch = 'a' ; ch<= 'z' ; ch ++){
                     char replacedCharArray[] = word.toCharArray();
